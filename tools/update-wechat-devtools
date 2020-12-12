@@ -115,7 +115,7 @@ let client = @.net.httpClient();
 
     @.fs.makeDirs(extractPath);
 
-    @.task.execute("7z", ["x", localPath, `-o${extractPath}`, packageDir], extractPath, (error) => {
+    @.task.execute("7z", ["x", '-y', localPath, `-o${extractPath}`, packageDir], extractPath, (error) => {
 
         if (error) {
             this.reject(error); return;
